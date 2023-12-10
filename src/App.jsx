@@ -1,13 +1,16 @@
 import './App.css';
+import Header from './components/Header';
+import TopStories from './components/TopStories';
 import NewNewsList from './components/NewNewsList';
+import Feed from './components/Feed';
 
 export default function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-center w-full m-10 font-bold underline">
-        Hello world!
-      </h1>
+    <div className='max-w-[1110px] mx-auto'>
+      <Header />
+      <TopStories />
       <NewNewsList />
+      <Feed />
     </div>
   )
 }
