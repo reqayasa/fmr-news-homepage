@@ -6,22 +6,31 @@ function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   function handleHamburgerClick() {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen(! isNavOpen);
   }
 
   return (
-    <header className="mx-4 mt-7 flex flex-row items-center justify-between">
+    <header className="mx-4 mt-7 flex flex-row items-center justify-between md:mt-24 md:mb-14 md:mx-0">
       <h1>
-        <img className="w-12" src={logo} alt="Company Logo" />
+        <img className="w-12 md:w-16" src={logo} alt="Company Logo" />
       </h1>
       <div className="">
+        <nav className="hidden md:flex">
+          <ol className="flex flex-row justify-between gap-10">
+            <NavItem key="Home" content="Home" />
+            <NavItem key="New" content="New" />
+            <NavItem key="Popular" content="Popular" />
+            <NavItem key="Trending" content="Trending" />
+            <NavItem key="categories" content="Categories" />
+          </ol>
+        </nav>
         <button
           className="transition-colors duration-200 hover:text-soft_red-500 md:hidden"
           onClick={handleHamburgerClick}
         >
           <HamburgerIcon />
         </button>
-        <div className={isNavOpen ? "opacity-100 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out opacity-0"}>
+        <div className={isNavOpen ? "opacity-100 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out opacity-0 md:hidden"}>
           <div
             className="
             fixed bottom-0 right-0 top-0 z-50 h-full
@@ -43,7 +52,7 @@ function Header() {
                 <NavItem key="New" content="New" />
                 <NavItem key="Popular" content="Popular" />
                 <NavItem key="Trending" content="Trending" />
-                <NavItem key="categories" content="categories" />
+                <NavItem key="categories" content="Categories" />
               </ol>
             </nav>
           </div>
@@ -62,8 +71,8 @@ function Header() {
 
 function NavItem({ content, hyperlink = "#" }) {
   return (
-    <li className="mb-7">
-      <a className="ease-in-out  hover:text-soft_orange-500" href={hyperlink}>
+    <li className="mb-7 md:mb-0">
+      <a className="ease-in-out  hover:text-soft_orange-500 md:text-lg md:text-dark_grayish_blue-500" href={hyperlink}>
         {content}
       </a>
     </li>

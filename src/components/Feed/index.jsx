@@ -6,7 +6,7 @@ import feedImg3 from '../../assets/images/image-gaming-growth.jpg';
 function FeedItem ({ number, img, title, description }) {
   return (
 
-      <article className='flex flex-row shrink-0 my-7'>
+      <article className='flex flex-row my-7 md:basis-1/3 md:my-8'>
         <picture className='w-[100px] flex-shrink-0'>
           <img className='' src={img} alt="" />
         </picture>
@@ -31,7 +31,7 @@ FeedItem.propTypes = {
 
 function Feed() {
   return (
-    <ol className='m-4'>
+    <ol className='m-4 md:m-0 md:flex md:flex-row md:gap-[30px] md:mt-8'>
       <FeedItem key='01' number='01' img={feedImg1} title='Reviving Retro PCs' description='What happens when old PCs are given modern upgrades?'/>
       <FeedItem key='02' number='02' img={feedImg2} title='Top 10 Laptops of 2022' description='Our best picks for various needs and budgets.'/>
       <FeedItem key='03' number='03' img={feedImg3} title='The Growth of Gaming' description='How the pandemic has sparked fresh opportunities.'/>
